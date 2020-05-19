@@ -24,7 +24,7 @@ const userSchema= new mongoose.Schema ({
   password: String
 })
 
-
+//using process.env.SECRET for my enviornment variable
 userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ['password']})
 
 const User = new mongoose.model('User', userSchema)
